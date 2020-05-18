@@ -5,7 +5,10 @@ package cnxsliu.collections;
  * @description
  * @date 2020/4/21 19:55
  * @strategy 二分查找，升序数组
- * >> mid 加一还是减一，while 里到底用 <= 还是 <
+ * >> 数组非空判断
+ * >> while 里用 <=
+ * >> int mid = left + (right - left) >> 1;
+ * >> mid + 1，mid - 1
  */
 public class BinarySearch {
     /**
