@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @date 2020/5/10 19:56
  * @strategy 归并排序
  */
-public class Main05 {
+public class MergeSort {
     public static void sort(int[] arr, int left, int right) {
         if (left >= right) {
             return;

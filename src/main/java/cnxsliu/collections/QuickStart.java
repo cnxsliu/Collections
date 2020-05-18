@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @date 2020/5/10 21:11
  * @strategy 快速排序
  */
-public class Main06 {
+public class QuickStart {
     private static void quickSort(int[] arr, int left,int right) {
         if (left >= right) {
             return;

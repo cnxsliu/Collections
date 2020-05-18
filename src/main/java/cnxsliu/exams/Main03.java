@@ -1,4 +1,4 @@
-package cnxsliu.collections;
+package cnxsliu.exams;
 
 import java.util.Arrays;
 import java.util.Scanner;
