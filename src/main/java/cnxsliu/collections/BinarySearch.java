@@ -22,18 +22,18 @@ public class BinarySearch {
         if (array == null || array.length <= 0) {
             return -1;
         }
-        int lo = 0;
-        int hi = array.length - 1;
+        int left = 0;
+        int right = array.length - 1;
         int mid;
-        while (lo <= hi) {
-            mid = lo + (hi - lo) / 2;
+        while (left <= right) {
+            mid = left + (right - left) >> 1;
             if (array[mid] == target) {
                 return mid;
             }
             if (array[mid] > target) {
-                hi = mid - 1;
+                right = mid - 1;
             } else {
-                lo = mid + 1;
+                left = mid + 1;
             }
         }
         return -1;
@@ -41,24 +41,24 @@ public class BinarySearch {
 
     /**
      * 使用递归
-     * @param array
-     * @param lo
-     * @param hi
-     * @param target
+     * @param array array
+     * @param left left
+     * @param right right
+     * @param target target
      * @return
      */
-    public int binarySearchWithRecursion(int[] array, int lo, int hi, int target) {
+    private int binarySearchWithRecursion(int[] array, int left, int right, int target) {
         if (array == null || array.length <= 0) {
             return -1;
         }
-        int mid = (lo + hi) / 2;
+        int mid = left + (right - left) >> 1;
         if (array[mid] == target) {
             return mid;
         }
         if (array[mid] > target) {
-            return binarySearchWithRecursion(array, lo, mid - 1, target);
+            return binarySearchWithRecursion(array, left, mid - 1, target);
         } else {
-            return binarySearchWithRecursion(array, mid + 1, hi, target);
+            return binarySearchWithRecursion(array, mid + 1, right, target);
         }
     }
 }
