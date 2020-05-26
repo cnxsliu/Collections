@@ -1,4 +1,4 @@
-package cnxsliu.collections;
+package cnxsliu.collections.Sort;
 
 import java.util.Arrays;
 
