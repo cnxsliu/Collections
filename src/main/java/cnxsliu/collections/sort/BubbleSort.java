@@ -1,4 +1,6 @@
-package cnxsliu.collections.Sort;
+package cnxsliu.collections.sort;
+
+import java.util.Arrays;
 
 /**
  * @author cnxsliu
@@ -6,7 +8,7 @@ package cnxsliu.collections.Sort;
  * @date 2020/5/26 19:41
  * @strategy
  */
-public class BubbltSort {
+public class BubbleSort {
     public void bubbleSort(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 0; j < nums.length - i - 1; j++) {
@@ -19,4 +21,10 @@ public class BubbltSort {
         }
     }
 
+    public static void main(String[] arr) {
+        BubbleSort sort = new BubbleSort();
+        int[] nums = {9,8,7,6,5,4,3,2,1};
+        sort.bubbleSort(nums);
+        System.out.println(Arrays.toString(nums));
+    }
 }
