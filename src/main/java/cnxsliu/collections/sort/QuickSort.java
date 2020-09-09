@@ -23,7 +23,7 @@ public class QuickSort {
     private int partition(int[] nums, int left, int right) {
         int value = nums[left];
         int j = left;
-        for (int i = left; i <= right; i++) {
+        for (int i = left + 1; i <= right; i++) {
             if (nums[i] < value) {
                 int temp = nums[i];
                 nums[i] = nums[j + 1];

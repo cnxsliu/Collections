@@ -12,30 +12,34 @@ package cnxsliu.collections;
  */
 public class BinarySearch {
     /**
-     * 使用循环
-     * 》》mid = lo + (hi - lo) / 2;可以防止直接相加内存溢出
-     * @param array
+     * 使用循环，共 18 行
+     * @param nums
      * @param target
      * @return
      */
-    public int binarySearch(int[] array, int target) {
-        if (array == null || array.length <= 0) {
+    public int binarySearch(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
         int left = 0;
-        int right = array.length - 1;
-        int mid;
+        int right = nums.length - 1;
         while (left <= right) {
-            mid = left + (right - left) >> 1;
-            if (array[mid] == target) {
-                return mid;
-            } else if (array[mid] > target) {
-                right = mid - 1;
+            int middle = (left + right) / 2;
+            if (nums[middle] == target) {
+                return middle;
+            } else if (nums[middle] < target) {
+                left = middle + 1;
             } else {
-                left = mid + 1;
+                right = middle - 1;
             }
         }
         return -1;
+    }
+
+    public static void main(String[] args) {
+        BinarySearch bs = new BinarySearch();
+        int[] nums = {0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println(bs.binarySearch(nums, 1));
     }
 
     /**

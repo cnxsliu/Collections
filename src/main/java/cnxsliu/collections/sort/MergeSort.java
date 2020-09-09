@@ -9,13 +9,16 @@ import java.util.Arrays;
  * @strategy 归并排序
  * >> 共 35 行
  * >> 注意：k <= right
+ * >> 注意：j - right
+ * >> 注意：temp[i - left] < temp[j - left]
+ * >> 注意：第一个条件判断，temp[j - left]
  */
 public class MergeSort {
     public void mergeSort(int[] nums, int left, int right) {
         if (left >= right) {
             return;
         }
-        int middle = left + (right - left) / 2;
+        int middle = (left + right) / 2;
         mergeSort(nums, left, middle);
         mergeSort(nums, middle + 1, right);
         if (nums[middle] > nums[middle + 1]) {
